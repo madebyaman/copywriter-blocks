@@ -23,49 +23,47 @@ import { RichText, useBlockProps } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function save(props) {
-	const {
-		attributes: {
-			credentials,
-			content,
-			mediaURL,
-			descriptionAlignment,
-			borderColor,
-			borderSize,
-		},
-	} = props;
+  const {
+    attributes: {
+      credentials,
+      content,
+      mediaURL,
+      descriptionAlignment,
+      borderColor,
+      borderSize,
+    },
+  } = props;
 
-	return (
-		<div {...useBlockProps.save()}>
-			<div
-				className="testimonial wrap"
-				style={{ border: `${borderSize}px solid ${borderColor}` }}
-			>
-				<div
-					className="testimonial-content"
-					style={{ textAlign: descriptionAlignment }}
-				>
-					<RichText.Content tagName="div" className="content" value={content} />
-				</div>
+  return (
+    <div {...useBlockProps.save()}>
+      <div
+        className="testimonial-wrapper"
+        style={{ border: `${borderSize}px solid ${borderColor}` }}
+      >
+        <div
+          className="testimonial-content"
+          style={{ textAlign: descriptionAlignment }}
+        >
+          <RichText.Content tagName="div" className="content" value={content} />
+        </div>
 
-				{mediaURL && (
-					<img
-						className="testimonial-image"
-						src={mediaURL}
-						alt={__("Testimonial Image", "testimonial")}
-					/>
-				)}
+        <div className="testimonial-info">
+          {mediaURL && (
+            <img
+              className="testimonial-image"
+              src={mediaURL}
+              alt={__("Testimonial Image", "testimonial")}
+            />
+          )}
 
-				<div
-					className="testimonial-credentials"
-					style={{ textAlign: descriptionAlignment }}
-				>
-					<RichText.Content
-						tagName="div"
-						value={credentials}
-						className="credentials"
-					/>
-				</div>
-			</div>
-		</div>
-	);
+          <RichText.Content
+            style={{ textAlign: descriptionAlignment }}
+            tagName="div"
+            value={credentials}
+            className="credentials"
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
