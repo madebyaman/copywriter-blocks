@@ -1,0 +1,43 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.testimonial {
+	border: 3px solid green;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-template-areas:
+		"content content"
+		"image credentials";
+}
+
+.testimonial.wrap {
+	padding: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.testimonial img {
+	height: 100px;
+	width: auto;
+	margin-right: 20px;
+}
+
+.testimonial-content {
+	grid-area: content;
+}
+
+.testimonial-image {
+	grid-area: image;
+}
+
+.testimonial-credentials {
+	grid-area: credentials;
+}
+
+.testimonial .highlight {
+	border-bottom: 3px solid #fff2ac;
+}

@@ -1,0 +1,47 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/hero-block",
+	"version": "0.1.0",
+	"title": "Copywriter: Hero Block",
+	"category": "layout",
+	"icon": "index-card",
+	"description": "A hero block for Copywriter Theme created by by Aman Thakur",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "h1"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".text"
+		},
+		"primaryButtonText": {
+			"type": "string"
+		},
+		"primaryButtonURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.primary",
+			"attribute": "href"
+		},
+		"secondaryButtonText": {
+			"type": "string"
+		},
+		"secondaryButtonURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a.secondary",
+			"attribute": "href"
+		}
+	},
+	"textdomain": "copywriter-theme-block",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

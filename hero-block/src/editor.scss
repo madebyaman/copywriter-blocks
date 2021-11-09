@@ -1,0 +1,42 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-hero-block {
+	input {
+		margin-top: 10px;
+		color: #777;
+		border-radius: 3px;
+		padding: 2px;
+
+		&:focus {
+			color: #333;
+		}
+	}
+
+	button {
+		padding: 10px 15px;
+		background-color: #32373c;
+		cursor: pointer;
+		color: white;
+
+		&:hover {
+			box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
+			color: white;
+		}
+	}
+
+	.button {
+		cursor: text;
+	}
+}
+
+.test-hero-block.components-button {
+	vertical-align: top;
+	border: 1px solid #e2e4e7;
+	background-color: #fff;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
