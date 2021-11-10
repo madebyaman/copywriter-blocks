@@ -1,0 +1,25 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.author-bio__image {
+	height: 200px;
+	width: 200px;
+}
+
+.author-bio__image .components-button {
+	border: 0 !important;
+	height: 100%;
+	border-radius: 100% !important;
+	color: #32373c !important;
+	padding: 0;
+	width: 100%;
+
+	img {
+		width: 100%;
+		height: auto;
+		border-radius: 100%;
+	}
+}

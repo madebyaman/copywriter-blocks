@@ -165,10 +165,7 @@ export default function Edit(props) {
           <RichText
             style={{ textAlign: descriptionAlignment }}
             tagName="div"
-            placeholder={__(
-              "Write a list of credentials…",
-              "gutenberg-examples"
-            )}
+            placeholder={__("Title and name...", "gutenberg-examples")}
             value={credentials}
             onChange={onChangeCredentials}
             className="credentials"

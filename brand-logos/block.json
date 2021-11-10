@@ -1,0 +1,47 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/brand-logos",
+	"version": "0.1.0",
+	"title": "Brand Logos",
+	"category": "layout",
+	"icon": "smiley",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"selector": "h2.title",
+			"source": "html"
+		},
+		"images": {
+			"type": "array",
+			"source": "query",
+			"default": [],
+			"selector": ".logo__item",
+			"query": {
+				"url": {
+					"type": "string",
+					"source": "attribute",
+					"attribute": "src"
+				},
+				"id": {
+					"source": "attribute",
+					"selector": "img",
+					"attribute": "data-id"
+				},
+				"alt": {
+					"source": "attribute",
+					"selector": "img",
+					"attribute": "alt"
+				}
+			}
+		}
+	},
+	"textdomain": "brand-logos",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

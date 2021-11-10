@@ -3,7 +3,7 @@
   "name": "create-block/testimonial",
   "version": "0.1.0",
   "title": "Testimonial",
-  "category": "copywriter-theme-blocks",
+  "category": "layout",
   "icon": "format-quote",
   "description": "Testimonial block for Copywriter Theme by Aman Thakur.",
   "supports": {
