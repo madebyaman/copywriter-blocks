@@ -73,7 +73,7 @@ export default function Edit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__("Background Settings", "copywriter-theme-blocks")}>
-					<div className="compoonents-base-control">
+					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
 								{__("Background Color", "copywriter-theme-blocks")}

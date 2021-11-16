@@ -31,32 +31,95 @@ export default function save(props) {
 			primaryButtonURL,
 			secondaryButtonText,
 			secondaryButtonURL,
+			imageURL,
+			imageAlt,
+			backgroundOpacity,
+			backgroundColor,
+			contentFontSize,
+			titleFontSize,
+			contentColor,
+			primaryButtonColor,
+			secondaryButtonColor,
+			primaryButtonBackgroundColor,
+			secondaryButtonBorderColor,
+			contentAlignment,
 		},
 	} = props;
 
 	return (
 		<div {...useBlockProps.save()}>
-			<div className="test-hero-block">
-				{title && <RichText.Content tagName="h1" value={title} />}
-				{content && (
-					<RichText.Content tagName="div" className="text" value={content} />
-				)}
-				<div className="buttons">
-					{primaryButtonText && (
-						<div className="primary-button">
-							<a href={primaryButtonURL} className="primary button">
-								<RichText.Content value={primaryButtonText} />
-							</a>
-						</div>
+			<div
+				className="copywriter-theme-hero-block"
+				style={{ background: backgroundColor }}
+			>
+				<div className="copywriter-hero-block__container">
+					{title && (
+						<RichText.Content
+							tagName="h2"
+							className="hero-block__title"
+							value={title}
+							style={{
+								color: contentColor,
+								fontSize: titleFontSize + "px",
+								textAlign: contentAlignment,
+							}}
+						/>
 					)}
-					{secondaryButtonText && (
-						<div className="secondary-button">
-							<a href={secondaryButtonURL} className="secondary button">
-								<RichText.Content value={secondaryButtonText} />
-							</a>
-						</div>
+					{content && (
+						<RichText.Content
+							tagName="div"
+							className="hero-block__content"
+							value={content}
+							style={{
+								color: contentColor,
+								fontSize: contentFontSize + "px",
+								textAlign: contentAlignment,
+							}}
+						/>
 					)}
+					<div className="hero-block__buttons">
+						{primaryButtonText && (
+							<div className="hero-block__primary-button">
+								<a
+									href={primaryButtonURL}
+									className="primary hero-block__button"
+									style={{
+										backgroundColor: primaryButtonBackgroundColor,
+										color: primaryButtonColor,
+									}}
+								>
+									<RichText.Content value={primaryButtonText} />
+								</a>
+							</div>
+						)}
+						{secondaryButtonText && (
+							<div className="hero-block__secondary-button">
+								<a
+									href={secondaryButtonURL}
+									className="secondary hero-block__button"
+									style={{
+										borderColor: secondaryButtonBorderColor,
+										color: secondaryButtonColor,
+									}}
+								>
+									<RichText.Content value={secondaryButtonText} />
+								</a>
+							</div>
+						)}
+					</div>
 				</div>
+				{imageURL && !!imageURL.length && (
+					<div className="image-wrap">
+						<img
+							src={imageURL}
+							alt={imageAlt}
+							style={{
+								opacity: backgroundOpacity + "%",
+							}}
+							className="coppywriter-hero-image"
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	);

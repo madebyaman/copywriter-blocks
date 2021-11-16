@@ -8,7 +8,8 @@
 	"icon": "smiley",
 	"description": "Example block written with ESNext standard and JSX support – build step required.",
 	"supports": {
-		"html": false
+		"html": false,
+		"align": ["wide", "full"]
 	},
 	"attributes": {
 		"title": {
@@ -16,28 +17,58 @@
 			"selector": "h2.title",
 			"source": "html"
 		},
-		"images": {
-			"type": "array",
-			"source": "query",
-			"default": [],
-			"selector": ".logo__item",
-			"query": {
-				"url": {
-					"type": "string",
-					"source": "attribute",
-					"attribute": "src"
-				},
-				"id": {
-					"source": "attribute",
-					"selector": "img",
-					"attribute": "data-id"
-				},
-				"alt": {
-					"source": "attribute",
-					"selector": "img",
-					"attribute": "alt"
-				}
-			}
+		"imageOneID": {
+			"type": "number"
+		},
+		"imageOneURL": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": ".image-one"
+		},
+		"imageOneAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": ".image-one"
+		},
+		"imageTwoID": {
+			"type": "number"
+		},
+		"imageTwoURL": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": ".image-two"
+		},
+		"imageTwoAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": ".image-two"
+		},
+		"imageThreeID": {
+			"type": "number"
+		},
+		"imageThreeURL": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": ".image-three"
+		},
+		"imageThreeAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": ".image-three"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#81bde7"
+		},
+		"opacity": {
+			"type": "number",
+			"default": 70
 		}
 	},
 	"textdomain": "brand-logos",

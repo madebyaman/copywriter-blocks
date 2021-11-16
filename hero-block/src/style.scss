@@ -6,7 +6,8 @@
  */
 
 :root {
-	--hero-block-bg-color: #fff;
+	--copywriter-hero-block-bg-color: #fff;
+	--copywriter-hero-block-opacity: 100%;
 	--text-color: #32373c;
 	--primary-button-bg-color: #32373c;
 	--primary-button-color: #fff;
@@ -14,29 +15,52 @@
 	--secondary-button-color: #32373c;
 }
 
-.wp-block-create-block-hero-block {
-	padding: 100px 0 120px;
+.is-style-default {
+	--copywriter-hero-block-bg-color: linear-gradient(
+		160deg,
+		#0093e9 0%,
+		#80d0c7 100%
+	);
+	--copywriter-hero-block-opacity: 20%;
+	--text-color: white;
+}
+
+.is-style-dark {
+	--copywriter-hero-block-opacity: 20%;
+	--copywriter-hero-block-bg-color: #32373c;
+	--text-color: white;
+	--primary-button-bg-color: white;
+	--primary-button-color: #32373c;
+	--secondary-button-border-color: white;
+	--secondary-button-color: white;
+}
+
+.copywriter-theme-hero-block {
+	position: relative;
 	text-align: center;
 	width: 100%;
-	background: var(--hero-bg-color);
+	background: var(--copywriter-hero-block-bg-color);
 	color: var(--text-color);
 
-	.text {
+	.hero-block__content {
 		margin: 40px 0 50px;
 	}
 
-	.buttons {
+	.hero-block__buttons {
 		display: flex;
 		justify-content: center;
 		gap: 20px;
 		margin-top: 25px;
 
-		.button {
+		.hero-block__button {
+			display: inline-block;
 			padding: 15px 25px;
 			font-weight: bold;
 			border-radius: 100px;
 			cursor: pointer;
 			border: 0;
+			transform: translateY(0);
+			transition: transform 200ms ease-out;
 
 			&.primary {
 				background-color: var(--primary-button-bg-color);
@@ -50,14 +74,31 @@
 			}
 
 			&:hover {
-				box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
+				transform: translateY(-5px);
 			}
 		}
 	}
 
-	.test-hero-block-content {
-		position: relative;
+	.copywriter-hero-block__container {
 		z-index: 10;
 		margin: 0 50px;
+		padding: 100px 0 120px;
+		position: relative;
+	}
+
+	.image-wrap {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 100%;
+		z-index: 1;
+
+		& > img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+			opacity: var(--copywriter-hero-block-opacity);
+		}
 	}
 }

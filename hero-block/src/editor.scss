@@ -4,7 +4,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-hero-block {
+.copywriter-theme-hero-block {
 	input {
 		margin-top: 10px;
 		color: #777;
@@ -28,15 +28,19 @@
 		}
 	}
 
-	.button {
+	.hero-block__button {
 		cursor: text;
 	}
-}
 
-.test-hero-block.components-button {
-	vertical-align: top;
-	border: 1px solid #e2e4e7;
-	background-color: #fff;
-	border-radius: 3px;
-	margin-bottom: 15px;
+	.copywriter-theme-hero-block.components-button {
+		vertical-align: top;
+		border: 1px solid #e2e4e7;
+		background-color: #fff;
+		border-radius: 3px;
+		margin-bottom: 15px;
+	}
+
+	.hero-block__buttons form {
+		margin-top: 20px;
+	}
 }

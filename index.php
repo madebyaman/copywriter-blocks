@@ -14,3 +14,5 @@ defined ('ABSPATH') || exit;
 include 'hero-block/hero-block.php';
 include 'testimonial/index.php';
 include 'author-bio/author-bio.php';
+include 'brand-logos/brand-logos.php';
+include 'cta/cta.php';

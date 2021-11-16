@@ -25,45 +25,51 @@ import { RichText, useBlockProps } from "@wordpress/block-editor";
 export default function save(props) {
 	const {
 		attributes: {
-			title,
-			imageOneAlt,
-			imageOneURL,
-			imageTwoAlt,
-			imageTwoURL,
-			imageThreeAlt,
-			imageThreeURL,
 			backgroundColor,
-			opacity,
+			content,
+			buttonText,
+			buttonURL,
+			contentAlignment,
+			borderColor,
+			borderSize,
+			buttonBackgroundColor,
+			buttonTextColor,
+			buttonShape,
+			buttonSize,
 		},
 	} = props;
 
 	return (
-		<>
-			<div {...useBlockProps.save()} style={{ backgroundColor }}>
-				<div className="brand-logos__container">
-					<RichText.Content tagName="h2" value={title} className="title" />
-					<div className="logo-container">
-						<img
-							style={{ opacity: opacity + "%" }}
-							src={imageOneURL}
-							alt={imageOneAlt}
-							className="image-one"
-						/>
-						<img
-							style={{ opacity: opacity + "%" }}
-							src={imageTwoURL}
-							alt={imageTwoAlt}
-							className="image-two"
-						/>
-						<img
-							style={{ opacity: opacity + "%" }}
-							src={imageThreeURL}
-							alt={imageThreeAlt}
-							className="image-three"
-						/>
-					</div>
+		<div
+			{...useBlockProps.save()}
+			style={{
+				backgroundColor,
+				border: borderSize + "px" + " solid" + " " + borderColor,
+			}}
+		>
+			<div className="cta__container" style={{ textAlign: contentAlignment }}>
+				{content && (
+					<RichText.Content
+						tagName="div"
+						className="cta__content"
+						value={content}
+					/>
+				)}
+				<div className="cta__button">
+					{buttonText && (
+						<a
+							href={buttonURL}
+							className={`button ${buttonShape} ${buttonSize}`}
+							style={{
+								color: buttonTextColor,
+								backgroundColor: buttonBackgroundColor,
+							}}
+						>
+							<RichText.Content value={buttonText} />
+						</a>
+					)}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

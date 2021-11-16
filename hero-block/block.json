@@ -14,12 +14,12 @@
 		"title": {
 			"type": "string",
 			"source": "html",
-			"selector": "h1"
+			"selector": ".hero-block__title"
 		},
 		"content": {
 			"type": "string",
 			"source": "html",
-			"selector": ".text"
+			"selector": ".hero-block__content"
 		},
 		"primaryButtonText": {
 			"type": "string"
@@ -27,7 +27,7 @@
 		"primaryButtonURL": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a.primary",
+			"selector": ".primary.hero-block__button",
 			"attribute": "href"
 		},
 		"secondaryButtonText": {
@@ -36,10 +36,73 @@
 		"secondaryButtonURL": {
 			"type": "string",
 			"source": "attribute",
-			"selector": "a.secondary",
+			"selector": ".secondary.hero-block__button",
 			"attribute": "href"
+		},
+		"imageID": {
+			"type": "number"
+		},
+		"imageURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"imageAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": "img"
+		},
+		"backgroundOpacity": {
+			"type": "number",
+			"default": 50
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"titleFontSize": {
+			"type": "number",
+			"default": 32
+		},
+		"contentFontSize": {
+			"type": "number",
+			"default": 19
+		},
+		"contentColor": {
+			"type": "string"
+		},
+		"primaryButtonColor": {
+			"type": "string"
+		},
+		"secondaryButtonColor": {
+			"type": "string"
+		},
+		"primaryButtonBackgroundColor": {
+			"type": "string"
+		},
+		"secondaryButtonBorderColor": {
+			"type": "string"
+		},
+		"showSecondaryButton": {
+			"type": "boolean"
+		},
+		"contentAlignment": {
+			"type": "string",
+			"default": "left"
 		}
 	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Main (default)",
+			"isDefault": true
+		},
+		{
+			"name": "dark",
+			"label": "Dark Style"
+		}
+	],
 	"textdomain": "copywriter-theme-block",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",

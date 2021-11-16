@@ -1,0 +1,68 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "copywriter-theme-blocks/cta",
+	"version": "0.1.0",
+	"title": "Call to action",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".cta__content"
+		},
+		"buttonURL": {
+			"type": "string",
+			"selector": ".button",
+			"source": "attribute",
+			"attribute": "href"
+		},
+		"buttonText": {
+			"type": "string"
+		},
+		"contentAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"fontSize": {
+			"type": "number",
+			"default": 19
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"borderSize": {
+			"type": "number",
+			"default": 0
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "cw-button-size-medium"
+		},
+		"buttonShape": {
+			"type": "string",
+			"default": "cw-button-shape-rounded"
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": "#3373dc"
+		},
+		"buttonTextColor": {
+			"type": "string",
+			"default": "#ffffff"
+		}
+	},
+	"textdomain": "copywriter-theme-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

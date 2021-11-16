@@ -1,0 +1,64 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-cta {
+	padding: 50px 0;
+}
+
+.cta__button .button {
+	padding: 12px 20px;
+	background-color: salmon;
+	color: white;
+	font-weight: bold;
+	border: 0;
+}
+
+.cta__button .button:hover {
+	background-color: white;
+	color: salmon;
+}
+
+.cta__container {
+	max-width: 680px;
+	margin: 0 auto;
+}
+
+.cta__content {
+	font-size: 21px;
+}
+
+.cta__container {
+	.cw-button-shape-square {
+		border-radius: 0;
+	}
+
+	.cw-button-shape-rounded {
+		border-radius: 5px;
+	}
+
+	.cw-button-shape-circular {
+		border-radius: 100px;
+	}
+
+	.cw-button-size-small {
+		font-size: 14px;
+	}
+
+	.cw-button-size-medium {
+		font-size: 20px;
+	}
+
+	.cw-button-size-large {
+		font-size: 26px;
+		padding: 0.8em 1.2em;
+	}
+
+	.cw-button-size-extralarge {
+		font-size: 32px;
+		padding: 0.8em 1.2em;
+	}
+}

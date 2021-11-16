@@ -6,7 +6,19 @@
  */
 
 .wp-block-create-block-brand-logos {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+	margin: 50px 0;
+	padding: 50px 0;
+
+	.title {
+		text-align: center;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
+	.logo-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 40px;
+		justify-items: center;
+	}
 }
