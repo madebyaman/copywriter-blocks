@@ -1,12 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "create-block/brand-logos",
+	"name": "copywriter-blocks/brand-logos",
 	"version": "0.1.0",
-	"title": "Brand Logos",
-	"category": "layout",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"title": "Copywriter: Brand Logos",
+	"category": "copywriter-blocks",
+	"icon": "groups",
+	"description": "Add brand logos with this block.",
 	"supports": {
 		"html": false,
 		"align": ["wide", "full"]
@@ -64,7 +64,7 @@
 		},
 		"backgroundColor": {
 			"type": "string",
-			"default": "#81bde7"
+			"default": "#fff"
 		},
 		"opacity": {
 			"type": "number",

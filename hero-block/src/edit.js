@@ -1,17 +1,4 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from "@wordpress/i18n";
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
-
 import {
 	RichText,
 	URLInput,
@@ -22,32 +9,10 @@ import {
 	BlockControls,
 	AlignmentToolbar,
 } from "@wordpress/block-editor";
-import {
-	Button,
-	Icon,
-	PanelBody,
-	RangeControl,
-	ResponsiveWrapper,
-	TextControl,
-	ToggleControl,
-} from "@wordpress/components";
+import { Button, Icon, PanelBody, RangeControl } from "@wordpress/components";
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import "./editor.scss";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit(props) {
 	const {
 		attributes: {
@@ -86,8 +51,8 @@ export default function Edit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__("Background Settings", "copywriter-theme-blocks")}>
-					<p>{__("Select a background image:", "copywriter-theme-blocks")}</p>
+				<PanelBody title={__("Background Settings", "copywriter-blocks")}>
+					<p>{__("Select a background image:", "copywriter-blocks")}</p>
 					<MediaUpload
 						onSelect={(img) =>
 							setAttributes({
@@ -102,27 +67,27 @@ export default function Edit(props) {
 							<div>
 								<Button
 									className="copywriter-hero-block components-button"
-									label={__("Edit image", "copywriter-theme-blocks")}
+									label={__("Edit image", "copywriter-blocks")}
 									onClick={open}
 								>
 									<Icon icon="format-image" />
-									{__("Select image", "copywriter-theme-blocks")}
+									{__("Select image", "copywriter-blocks")}
 								</Button>
 								{imageURL && !!imageURL.length && (
 									<Button
 										className="copywriter-hero-block components-button"
-										label={__("Remove image", "copywriter-theme-blocks")}
+										label={__("Remove image", "copywriter-blocks")}
 										onClick={onRemoveImage}
 									>
 										<Icon icon="dismiss"></Icon>
-										{__("Remove image", "copywriter-theme-blocks")}
+										{__("Remove image", "copywriter-blocks")}
 									</Button>
 								)}
 							</div>
 						)}
 					/>
 					<RangeControl
-						label={__("Image opacity", "copywriter-theme-blocks")}
+						label={__("Image opacity", "copywriter-blocks")}
 						value={backgroundOpacity}
 						onChange={(val) => setAttributes({ backgroundOpacity: val })}
 						min={0}
@@ -130,20 +95,20 @@ export default function Edit(props) {
 						step={10}
 					/>
 					<PanelColorSettings
-						title={__("Background Color", "copywriter-theme-blocks")}
+						title={__("Background Color", "copywriter-blocks")}
 						initialOpen={false}
 						colorSettings={[
 							{
 								value: backgroundColor,
 								onChange: (val) => setAttributes({ backgroundColor: val }),
-								label: __("Overlay Color", "copywriter-theme-blocks"),
+								label: __("Overlay Color", "copywriter-blocks"),
 							},
 						]}
 					></PanelColorSettings>
 				</PanelBody>
-				<PanelBody title={__("Typography", "copywriter-theme-blocks")}>
+				<PanelBody title={__("Typography", "copywriter-blocks")}>
 					<RangeControl
-						label={__("Title Font Size", "copywriter-theme-blocks")}
+						label={__("Title Font Size", "copywriter-blocks")}
 						value={titleFontSize}
 						onChange={(val) => setAttributes({ titleFontSize: val })}
 						min={24}
@@ -151,7 +116,7 @@ export default function Edit(props) {
 						step={2}
 					/>
 					<RangeControl
-						label={__("Text Font Size", "copywriter-theme-blocks")}
+						label={__("Text Font Size", "copywriter-blocks")}
 						value={contentFontSize}
 						onChange={(val) => setAttributes({ contentFontSize: val })}
 						min={14}
@@ -159,29 +124,26 @@ export default function Edit(props) {
 						step={1}
 					/>
 					<PanelColorSettings
-						title={__("Text Color", "copywriter-theme-blocks")}
+						title={__("Text Color", "copywriter-blocks")}
 						initialOpen={false}
 						colorSettings={[
 							{
 								value: contentColor,
 								onChange: (val) => setAttributes({ contentColor: val }),
-								label: __("Text color", "copywriter-theme-blocks"),
+								label: __("Text color", "copywriter-blocks"),
 							},
 						]}
 					></PanelColorSettings>
 				</PanelBody>
-				<PanelBody title={__("Button Settings", "copywriter-theme-blocks")}>
+				<PanelBody title={__("Button Settings", "copywriter-blocks")}>
 					<PanelColorSettings
-						title={__(
-							"Primary Button Color Settings",
-							"copywriter-theme-blocks"
-						)}
+						title={__("Primary Button Color Settings", "copywriter-blocks")}
 						initialOpen={false}
 						colorSettings={[
 							{
 								value: primaryButtonColor,
 								onChange: (val) => setAttributes({ primaryButtonColor: val }),
-								label: __("Primary Button Color", "copywriter-theme-blocks"),
+								label: __("Primary Button Color", "copywriter-blocks"),
 							},
 							{
 								value: primaryButtonBackgroundColor,
@@ -189,22 +151,19 @@ export default function Edit(props) {
 									setAttributes({ primaryButtonBackgroundColor: val }),
 								label: __(
 									"Primary Button Background Color",
-									"copywriter-theme-blocks"
+									"copywriter-blocks"
 								),
 							},
 							{
 								value: secondaryButtonColor,
 								onChange: (val) => setAttributes({ secondaryButtonColor: val }),
-								label: __("Secondary Button Color", "copywriter-theme-blocks"),
+								label: __("Secondary Button Color", "copywriter-blocks"),
 							},
 							{
 								value: secondaryButtonBorderColor,
 								onChange: (val) =>
 									setAttributes({ secondaryButtonBorderColor: val }),
-								label: __(
-									"Secondary Button Border Color",
-									"copywriter-theme-blocks"
-								),
+								label: __("Secondary Button Border Color", "copywriter-blocks"),
 							},
 						]}
 					></PanelColorSettings>
@@ -218,15 +177,16 @@ export default function Edit(props) {
 					/>
 				</BlockControls>
 				<div
-					className="copywriter-theme-hero-block"
+					className="copywriter-hero-block"
 					style={{ background: backgroundColor }}
 				>
 					<div className="copywriter-hero-block__container">
 						<RichText
 							tagName="h2"
-							placeholder={__("Hero Title", "copywriter-theme-blocks")}
+							placeholder={__("Hero Title", "copywriter-blocks")}
 							value={title}
 							className="hero-block__title"
+							allowedFormats={["core/bold", "core/italic"]}
 							style={{
 								color: contentColor,
 								fontSize: titleFontSize + "px",
@@ -238,9 +198,15 @@ export default function Edit(props) {
 						<RichText
 							tagName="div"
 							multiline="p"
-							placeholder={__("Enter content", "copywriter-theme-blocks")}
+							placeholder={__("Enter content", "copywriter-blocks")}
 							className="hero-block__content"
 							value={content}
+							allowedFormats={[
+								"core/bold",
+								"core/italic",
+								"core/list",
+								"core/link",
+							]}
 							style={{
 								color: contentColor,
 								fontSize: contentFontSize + "px",
@@ -253,7 +219,7 @@ export default function Edit(props) {
 							<div className="hero-block__primary-button">
 								<RichText
 									tagName="span"
-									placeholder={__("Button text...", "copywriter-theme-blocks")}
+									placeholder={__("Button text...", "copywriter-blocks")}
 									value={primaryButtonText}
 									allowedFormats={[]}
 									className="primary hero-block__button"
@@ -272,7 +238,7 @@ export default function Edit(props) {
 											}
 										/>
 										<Button
-											label={__("Apply", "copywriter-theme-blocks")}
+											label={__("Apply", "copywriter-blocks")}
 											type="submit"
 										>
 											<Icon icon="editor-break" />
@@ -284,7 +250,7 @@ export default function Edit(props) {
 							<div className="hero-block__secondary-button">
 								<RichText
 									tagName="span"
-									placeholder={__("Button text...", "copywriter-theme-blocks")}
+									placeholder={__("Button text...", "copywriter-blocks")}
 									value={secondaryButtonText}
 									allowedFormats={[]}
 									className="secondary hero-block__button"
@@ -305,7 +271,7 @@ export default function Edit(props) {
 											}
 										/>
 										<Button
-											label={__("Apply", "copywriter-theme-blocks")}
+											label={__("Apply", "copywriter-blocks")}
 											type="submit"
 										>
 											<Icon icon="editor-break" />

@@ -1,16 +1,4 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from "@wordpress/i18n";
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
 import {
 	RichText,
 	useBlockProps,
@@ -20,25 +8,10 @@ import {
 	ColorPalette,
 	BlockControls,
 } from "@wordpress/block-editor";
-
 import { Button, Icon, PanelBody } from "@wordpress/components";
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import "./editor.scss";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit(props) {
 	const {
 		attributes: {
@@ -61,22 +34,24 @@ export default function Edit(props) {
 		});
 	};
 
-	const onRemoveImage = (media) => {
-		setAttributes({
-			mediaAlt: null,
-			mediaID: null,
-			mediaURL: null,
-		});
+	const onCloseImage = (media) => {
+		if (!media) {
+			setAttributes({
+				mediaAlt: null,
+				mediaID: null,
+				mediaURL: null,
+			});
+		}
 	};
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__("Background Settings", "copywriter-theme-blocks")}>
+				<PanelBody title={__("Background Settings", "copywriter-blocks")}>
 					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
-								{__("Background Color", "copywriter-theme-blocks")}
+								{__("Background Color", "copywriter-blocks")}
 							</label>
 							<ColorPalette
 								value={backgroundColor}
@@ -97,6 +72,7 @@ export default function Edit(props) {
 					<div className="author-bio__image">
 						<MediaUpload
 							onSelect={onSelectImage}
+							onClose={onCloseImage}
 							allowedTypes="image"
 							value={mediaID}
 							render={({ open }) => (
@@ -118,10 +94,7 @@ export default function Edit(props) {
 							<RichText
 								tagName="h2"
 								style={{ textAlign: contentAlignment }}
-								placeholder={__(
-									"Write author name...",
-									"copywriter-theme-blocks"
-								)}
+								placeholder={__("Write author name...", "copywriter-blocks")}
 								value={title}
 								onChange={(val) => setAttributes({ title: val })}
 							/>
@@ -130,8 +103,8 @@ export default function Edit(props) {
 						<RichText
 							tagName="div"
 							placeholder={__(
-								"Write a biography that distill objective credibility and authority to your readers...",
-								"copywriter-theme-blocks"
+								"Write a biography for that author that brings out credibility and authority to your readers...",
+								"copywriter-blocks"
 							)}
 							className="author-bio__text"
 							value={content}

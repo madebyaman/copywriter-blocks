@@ -5,23 +5,25 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-author-bio .author-bio__container {
-	padding: 100px 20px;
-}
+.wp-block-copywriter-blocks-author {
+	.author-bio__container {
+		padding: 100px 20px;
+	}
 
-.author-bio__image {
-	border-radius: 100%;
-	max-width: 200px;
-}
+	.author-bio__image {
+		border-radius: 100%;
+		max-width: 200px;
+	}
 
-.author-bio__container {
-	max-width: 980px;
-	display: grid;
-	gap: 20px;
-	margin-left: auto;
-	margin-right: auto;
+	.author-bio__container {
+		max-width: 980px;
+		display: grid;
+		gap: 20px;
+		margin-left: auto;
+		margin-right: auto;
 
-	@media (min-width: 540px) {
-		grid-template-columns: 1fr 3fr;
+		@media (min-width: 540px) {
+			grid-template-columns: 1fr 3fr;
+		}
 	}
 }

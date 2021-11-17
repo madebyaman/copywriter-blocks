@@ -1,69 +1,63 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.copywriter-testimonial-block {
+	font-size: 19px;
+	padding: 0 10px;
 
-.wp-block-create-block-testimonial {
-  font-size: 19px;
+	.credentials {
+		font-size: 16px;
+	}
 
-  .credentials {
-    font-size: 16px;
-  }
+	.testimonial-wrapper {
+		border: 3px solid green;
+		border-radius: 5px;
+		padding: 40px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
 
-  .testimonial-wrapper {
-    border: 3px solid green;
-    border-radius: 5px;
-    padding: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+	.testimonial-info {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
 
-  .testimonial-info {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
+	.testimonial-image {
+		position: relative;
+		width: 75px;
+		height: 75px;
+		border-radius: 100%;
 
-  .testimonial-image {
-    position: relative;
-    width: 75px;
-    height: 75px;
-    border-radius: 100%;
+		& > .components-button {
+			border: 0;
+			color: #32373c;
+			background-color: rgb(249, 250, 251);
+			width: 75px;
+			height: 75px;
+			border-radius: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
 
-    & > .components-button {
-      border: 0;
-      color: #32373c;
-      background-color: rgb(249, 250, 251);
-      width: 75px;
-      height: 75px;
-      border-radius: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+			&:hover {
+				color: #2271b1;
+			}
+		}
 
-      &:hover {
-        color: #2271b1;
-      }
-    }
+		img {
+			position: absolute;
+			max-width: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 100%;
+		}
 
-    img {
-      position: absolute;
-      max-width: 100%;
-      top: 0;
-      left: 0;
-      border-radius: 100%;
-    }
-
-    .testimonial-image-edit-icon {
-      position: absolute;
-      top: -3px;
-      right: -3px;
-      color: red;
-      background-color: white;
-      border-radius: 100%;
-    }
-  }
+		.testimonial-image-edit-icon {
+			position: absolute;
+			top: -3px;
+			right: -3px;
+			color: red;
+			background-color: white;
+			border-radius: 100%;
+		}
+	}
 }

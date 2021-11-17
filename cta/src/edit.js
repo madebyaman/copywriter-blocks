@@ -1,16 +1,4 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from "@wordpress/i18n";
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
 import {
 	AlignmentToolbar,
 	BlockControls,
@@ -19,15 +7,7 @@ import {
 	URLInput,
 	useBlockProps,
 	ColorPalette,
-	PanelColorSettings,
 } from "@wordpress/block-editor";
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import "./editor.scss";
 import {
 	Button,
@@ -37,14 +17,6 @@ import {
 	SelectControl,
 } from "@wordpress/components";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit(props) {
 	const {
 		attributes: {
@@ -81,11 +53,11 @@ export default function Edit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__("Background Settings", "copywriter-theme-blocks")}>
+				<PanelBody title={__("Background Settings", "copywriter-blocks")}>
 					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
-								{__("Background Color", "copywriter-theme-blocks")}
+								{__("Background Color", "copywriter-blocks")}
 							</label>
 							<ColorPalette
 								value={backgroundColor}
@@ -96,7 +68,7 @@ export default function Edit(props) {
 					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
-								{__("Border Color", "copywriter-theme-blocks")}
+								{__("Border Color", "copywriter-blocks")}
 							</label>
 							<ColorPalette
 								value={borderColor}
@@ -105,7 +77,7 @@ export default function Edit(props) {
 						</div>
 					</div>
 					<RangeControl
-						label={__("Border Size", "copywriter-theme-blocks")}
+						label={__("Border Size", "copywriter-blocks")}
 						value={borderSize}
 						onChange={(val) => setAttributes({ borderSize: val })}
 						min={0}
@@ -113,9 +85,9 @@ export default function Edit(props) {
 						step={1}
 					/>
 				</PanelBody>
-				<PanelBody title={__("Button Settings", "copywriter-theme-blocks")}>
+				<PanelBody title={__("Button Settings", "copywriter-blocks")}>
 					<SelectControl
-						label={__("Button Size", "copywriter-theme-blocks")}
+						label={__("Button Size", "copywriter-blocks")}
 						value={buttonSize}
 						options={buttonSizeOptions.map(({ value, label }) => ({
 							value,
@@ -124,7 +96,7 @@ export default function Edit(props) {
 						onChange={(val) => setAttributes({ buttonSize: val })}
 					/>
 					<SelectControl
-						label={__("Button Shape", "copywriter-theme-blocks")}
+						label={__("Button Shape", "copywriter-blocks")}
 						value={buttonShape}
 						options={buttonShapeOptions.map(({ value, label }) => ({
 							value,
@@ -135,7 +107,7 @@ export default function Edit(props) {
 					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
-								{__("Button Text Color", "copywriter-theme-blocks")}
+								{__("Button Text Color", "copywriter-blocks")}
 							</label>
 							<ColorPalette
 								value={buttonTextColor}
@@ -146,7 +118,7 @@ export default function Edit(props) {
 					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
-								{__("Button Background Color", "copywriter-theme-blocks")}
+								{__("Button Background Color", "copywriter-blocks")}
 							</label>
 							<ColorPalette
 								value={buttonBackgroundColor}
@@ -171,13 +143,16 @@ export default function Edit(props) {
 						onChange={(val) => setAttributes({ contentAlignment: val })}
 					/>
 				</BlockControls>
-				<div className="cta__container" style={{ textAlign: contentAlignment }}>
+				<div
+					className="copywriter-cta__container"
+					style={{ textAlign: contentAlignment }}
+				>
 					<RichText
 						tagName="div"
 						multiline="p"
 						placeholder={__(
 							"Enter attention capturing text...",
-							"copywriter-theme-blocks"
+							"copywriter-blocks"
 						)}
 						className="cta__content"
 						value={content}
@@ -186,7 +161,7 @@ export default function Edit(props) {
 					<div className="cta__button">
 						<RichText
 							tagName="span"
-							placeholder={__("Button text...", "copywriter-theme-blocks")}
+							placeholder={__("Button text...", "copywriter-blocks")}
 							value={buttonText}
 							className={`button ${buttonShape} ${buttonSize}`}
 							onChange={(val) => setAttributes({ buttonText: val })}
@@ -202,10 +177,7 @@ export default function Edit(props) {
 									value={buttonURL}
 									onChange={(val) => setAttributes({ buttonURL: val })}
 								/>
-								<Button
-									label={__("Apply", "copywriter-theme-blocks")}
-									type="submit"
-								>
+								<Button label={__("Apply", "copywriter-blocks")} type="submit">
 									<Icon icon="editor-break" />
 								</Button>
 							</form>

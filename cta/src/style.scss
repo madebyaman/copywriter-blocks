@@ -5,33 +5,28 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-cta {
-	padding: 50px 0;
-}
-
-.cta__button .button {
-	padding: 12px 20px;
-	background-color: salmon;
-	color: white;
-	font-weight: bold;
-	border: 0;
-}
-
-.cta__button .button:hover {
-	background-color: white;
-	color: salmon;
-}
-
-.cta__container {
+.copywriter-cta__container {
 	max-width: 680px;
 	margin: 0 auto;
-}
+	padding: 50px 0;
 
-.cta__content {
-	font-size: 21px;
-}
+	.cta__button .button {
+		padding: 12px 20px;
+		background-color: salmon;
+		color: white;
+		font-weight: bold;
+		border: 0;
+	}
 
-.cta__container {
+	.cta__button .button:hover {
+		background-color: white;
+		color: salmon;
+	}
+
+	.cta__content {
+		font-size: 21px;
+	}
+
 	.cw-button-shape-square {
 		border-radius: 0;
 	}

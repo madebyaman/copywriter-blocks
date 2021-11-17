@@ -1,16 +1,4 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from "@wordpress/i18n";
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
 import {
 	RichText,
 	useBlockProps,
@@ -18,25 +6,10 @@ import {
 	InspectorControls,
 	ColorPalette,
 } from "@wordpress/block-editor";
-
 import { Button, Icon, PanelBody, RangeControl } from "@wordpress/components";
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import "./editor.scss";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit(props) {
 	const {
 		attributes: {
@@ -59,11 +32,11 @@ export default function Edit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__("Basic Settings", "copywriter-theme-blocks")}>
+				<PanelBody title={__("Basic Settings", "copywriter-blocks")}>
 					<div className="components-base-control">
 						<div className="components-base-control__field">
 							<label className="components-base-control__label">
-								{__("Background Color", "copywriter-theme-blocks")}
+								{__("Background Color", "copywriter-blocks")}
 							</label>
 							<ColorPalette
 								value={backgroundColor}
@@ -72,7 +45,7 @@ export default function Edit(props) {
 						</div>
 					</div>
 					<RangeControl
-						label={__("Images opacity", "copywriter-theme-blocks")}
+						label={__("Images opacity", "copywriter-blocks")}
 						value={opacity}
 						onChange={(val) => setAttributes({ opacity: val })}
 						min={0}
@@ -82,10 +55,10 @@ export default function Edit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps()} style={{ backgroundColor }}>
-				<div className="brand-logos__container">
+				<div className="copywriter-brand-logos__container">
 					<RichText
 						tagName="h2"
-						placeholder={__("Enter title...", "copywriter-theme-blocks")}
+						placeholder={__("Enter title...", "copywriter-blocks")}
 						value={title}
 						className="title"
 						allowedFormats={["core/bold", "core/italic"]}

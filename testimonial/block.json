@@ -1,48 +1,49 @@
 {
-  "apiVersion": 2,
-  "name": "create-block/testimonial",
-  "version": "0.1.0",
-  "title": "Testimonial",
-  "category": "layout",
-  "icon": "format-quote",
-  "description": "Testimonial block for Copywriter Theme by Aman Thakur.",
-  "supports": {
-    "align": ["wide", "full"]
-  },
-  "attributes": {
-    "credentials": {
-      "type": "string",
-      "source": "html",
-      "selector": ".credentials"
-    },
-    "content": {
-      "type": "string",
-      "source": "html",
-      "selector": ".content"
-    },
-    "mediaID": {
-      "type": "number"
-    },
-    "mediaURL": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "img",
-      "attribute": "src"
-    },
-    "descriptionAlignment": {
-      "type": "string",
-      "default": "left"
-    },
-    "borderColor": {
-      "type": "string",
-      "default": "#cf2e2e"
-    },
-    "borderSize": {
-      "type": "string"
-    }
-  },
-  "textdomain": "copywriter-theme-block",
-  "editorScript": "file:./build/index.js",
-  "editorStyle": "file:./build/index.css",
-  "style": "file:./build/style-index.css"
+	"apiVersion": 2,
+	"name": "copywriter-blocks/testimonial",
+	"version": "0.1.0",
+	"title": "Copywriter: Testimonial",
+	"category": "copywriter-blocks",
+	"icon": "testimonial",
+	"description": "Testimonial block for Copywriter Theme by Aman Thakur.",
+	"supports": {
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"credentials": {
+			"type": "string",
+			"source": "html",
+			"selector": ".credentials"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".content"
+		},
+		"mediaID": {
+			"type": "number"
+		},
+		"mediaURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"descriptionAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#cf2e2e"
+		},
+		"borderSize": {
+			"type": "number",
+			"default": 3
+		}
+	},
+	"textdomain": "copywriter-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
 }

@@ -25,7 +25,7 @@ import save from "./save";
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType("copywriter-theme-blocks/cta", {
+registerBlockType("copywriter-blocks/cta", {
 	/**
 	 * @see ./edit.js
 	 */

@@ -1,14 +1,14 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "create-block/hero-block",
+	"name": "copywriter-blocks/hero-block",
 	"version": "0.1.0",
 	"title": "Copywriter: Hero Block",
-	"category": "layout",
+	"category": "copywriter-blocks",
 	"icon": "index-card",
-	"description": "A hero block for Copywriter Theme created by by Aman Thakur",
+	"description": "A hero block for Copywriter Theme.",
 	"supports": {
-		"html": false
+		"align": ["full", "wide"]
 	},
 	"attributes": {
 		"title": {

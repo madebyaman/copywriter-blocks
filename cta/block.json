@@ -1,12 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "copywriter-theme-blocks/cta",
+	"name": "copywriter-blocks/cta",
 	"version": "0.1.0",
-	"title": "Call to action",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"title": "Copywriter: Call to Action",
+	"category": "copywriter-blocks",
+	"icon": "megaphone",
+	"description": "Attract visitors with this call to action block.",
 	"supports": {
 		"html": false,
 		"align": ["wide", "full"]
@@ -61,7 +61,7 @@
 			"default": "#ffffff"
 		}
 	},
-	"textdomain": "copywriter-theme-blocks",
+	"textdomain": "copywriter-blocks",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"

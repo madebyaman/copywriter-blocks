@@ -1,12 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "create-block/author-bio",
+	"name": "copywriter-blocks/author",
 	"version": "0.1.0",
-	"title": "Author Bio",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"title": "Copywriter Block: Author",
+	"category": "copywriter-blocks",
+	"icon": "businessperson",
+	"description": "Create a beautiful author block.",
 	"supports": {
 		"html": false,
 		"align": ["full", "wide"]
