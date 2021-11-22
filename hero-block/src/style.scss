@@ -15,24 +15,36 @@
 	--secondary-button-color: #32373c;
 }
 
-.is-style-default {
-	--copywriter-hero-block-bg-color: linear-gradient(
-		160deg,
-		#0093e9 0%,
-		#80d0c7 100%
-	);
-	--copywriter-hero-block-opacity: 20%;
-	--text-color: white;
-}
+.wp-block-copywriter-blocks-hero-block {
+	&.is-style-main {
+		--copywriter-hero-block-bg-color: linear-gradient(
+			160deg,
+			#0093e9 0%,
+			#80d0c7 100%
+		);
+		--copywriter-hero-block-opacity: 20%;
+		--text-color: white;
+	}
 
-.is-style-dark {
-	--copywriter-hero-block-opacity: 20%;
-	--copywriter-hero-block-bg-color: #32373c;
-	--text-color: white;
-	--primary-button-bg-color: white;
-	--primary-button-color: #32373c;
-	--secondary-button-border-color: white;
-	--secondary-button-color: white;
+	&.is-style-dark {
+		--copywriter-hero-block-opacity: 20%;
+		--copywriter-hero-block-bg-color: #32373c;
+		--text-color: white;
+		--primary-button-bg-color: white;
+		--primary-button-color: #32373c;
+		--secondary-button-border-color: white;
+		--secondary-button-color: white;
+	}
+
+	&.is-style-minimal {
+		--copywriter-hero-block-bg-color: #fff;
+		--copywriter-hero-block-opacity: 100%;
+		--text-color: #32373c;
+		--primary-button-bg-color: #32373c;
+		--primary-button-color: #fff;
+		--secondary-button-border-color: #32373c;
+		--secondary-button-color: #32373c;
+	}
 }
 
 .copywriter-hero-block {
@@ -81,8 +93,7 @@
 
 	.copywriter-hero-block__container {
 		z-index: 10;
-		margin: 0 50px;
-		padding: 100px 0 120px;
+		padding: 100px 10px;
 		position: relative;
 	}
 

@@ -31,7 +31,7 @@ export default function save(props) {
 				className="copywriter-hero-block"
 				style={{ background: backgroundColor }}
 			>
-				<div className="copywriter-hero-block__container">
+				<div className="copywriter-hero-block__container content-inner">
 					{title && (
 						<RichText.Content
 							tagName="h2"

@@ -10,11 +10,15 @@ export default function save(props) {
 			mediaURL,
 			contentAlignment,
 			backgroundColor,
+			textColor,
 		},
 	} = props;
 
 	return (
-		<div {...useBlockProps.save()} style={{ backgroundColor }}>
+		<div
+			{...useBlockProps.save()}
+			style={{ backgroundColor, color: textColor }}
+		>
 			<div className="author-bio__container">
 				<img className="author-bio__image" src={mediaURL} alt={mediaAlt} />
 				<div className="author-bio__content">

@@ -22,24 +22,31 @@ export default function save(props) {
 				<div className="copywriter-brand-logos__container">
 					<RichText.Content tagName="h2" value={title} className="title" />
 					<div className="logo-container">
-						<img
-							style={{ opacity: opacity + "%" }}
-							src={imageOneURL}
-							alt={imageOneAlt}
-							className="image-one"
-						/>
-						<img
-							style={{ opacity: opacity + "%" }}
-							src={imageTwoURL}
-							alt={imageTwoAlt}
-							className="image-two"
-						/>
-						<img
-							style={{ opacity: opacity + "%" }}
-							src={imageThreeURL}
-							alt={imageThreeAlt}
-							className="image-three"
-						/>
+						{imageOneURL && (
+							<img
+								style={{ opacity: opacity + "%" }}
+								src={imageOneURL}
+								alt={imageOneAlt}
+								className="image-one"
+							/>
+						)}
+						{imageTwoURL && (
+							<img
+								style={{ opacity: opacity + "%" }}
+								src={imageTwoURL}
+								alt={imageTwoAlt}
+								className="image-two"
+							/>
+						)}
+
+						{imageThreeURL && (
+							<img
+								style={{ opacity: opacity + "%" }}
+								src={imageThreeURL}
+								alt={imageThreeAlt}
+								className="image-three"
+							/>
+						)}
 					</div>
 				</div>
 			</div>

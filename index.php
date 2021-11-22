@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author: Aman Thakur
  *
- * @package copywriter-theme-blocks
+ * @package copywriter-blocks
  */
 
 defined ('ABSPATH') || exit;

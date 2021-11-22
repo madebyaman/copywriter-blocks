@@ -1,4 +1,4 @@
-.copywriter-hero-block {
+.wp-block-copywriter-blocks-hero-block {
 	input {
 		margin-top: 10px;
 		color: #777;
@@ -26,15 +26,15 @@
 		cursor: text;
 	}
 
-	.copywriter-theme-hero-block.components-button {
-		vertical-align: top;
-		border: 1px solid #e2e4e7;
-		background-color: #fff;
-		border-radius: 3px;
-		margin-bottom: 15px;
-	}
-
 	.hero-block__buttons form {
 		margin-top: 20px;
 	}
+}
+
+.hero-block__components-button {
+	vertical-align: top;
+	border: 1px solid #e2e4e7;
+	background-color: #fff;
+	border-radius: 3px;
+	margin-bottom: 15px;
 }

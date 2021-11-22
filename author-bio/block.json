@@ -43,9 +43,13 @@
 		},
 		"contentAlignment": {
 			"type": "string"
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#32373c"
 		}
 	},
-	"textdomain": "author-bio",
+	"textdomain": "copywriter-blocks",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"

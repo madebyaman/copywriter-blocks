@@ -66,7 +66,7 @@ export default function Edit(props) {
 						render={({ open }) => (
 							<div>
 								<Button
-									className="copywriter-hero-block components-button"
+									className="hero-block__components-button"
 									label={__("Edit image", "copywriter-blocks")}
 									onClick={open}
 								>
@@ -75,7 +75,7 @@ export default function Edit(props) {
 								</Button>
 								{imageURL && !!imageURL.length && (
 									<Button
-										className="copywriter-hero-block components-button"
+										className="hero-block__components-button"
 										label={__("Remove image", "copywriter-blocks")}
 										onClick={onRemoveImage}
 									>
@@ -180,7 +180,7 @@ export default function Edit(props) {
 					className="copywriter-hero-block"
 					style={{ background: backgroundColor }}
 				>
-					<div className="copywriter-hero-block__container">
+					<div className="copywriter-hero-block__container content-inner">
 						<RichText
 							tagName="h2"
 							placeholder={__("Hero Title", "copywriter-blocks")}

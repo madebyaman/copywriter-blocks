@@ -94,16 +94,20 @@
 	},
 	"styles": [
 		{
-			"name": "default",
-			"label": "Main (default)",
-			"isDefault": true
+			"name": "main",
+			"label": "Main Style"
 		},
 		{
 			"name": "dark",
 			"label": "Dark Style"
+		},
+		{
+			"name": "minimal",
+			"label": "Minimal (Default)",
+			"isDefault": true
 		}
 	],
-	"textdomain": "copywriter-theme-block",
+	"textdomain": "copywriter-blocks",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"

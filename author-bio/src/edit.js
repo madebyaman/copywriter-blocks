@@ -22,6 +22,7 @@ export default function Edit(props) {
 			mediaURL,
 			backgroundColor,
 			contentAlignment,
+			textColor,
 		},
 		setAttributes,
 	} = props;
@@ -59,9 +60,20 @@ export default function Edit(props) {
 							/>
 						</div>
 					</div>
+					<div className="components-base-control">
+						<div className="components-base-control__field">
+							<label className="components-base-control__label">
+								{__("Text Color", "copywriter-blocks")}
+							</label>
+							<ColorPalette
+								value={textColor}
+								onChange={(val) => setAttributes({ textColor: val })}
+							/>
+						</div>
+					</div>
 				</PanelBody>
 			</InspectorControls>
-			<div {...useBlockProps()} style={{ backgroundColor }}>
+			<div {...useBlockProps()} style={{ backgroundColor, color: textColor }}>
 				<div className="author-bio__container">
 					<BlockControls>
 						<AlignmentToolbar
