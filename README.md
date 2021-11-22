@@ -2,7 +2,7 @@
 
 To install:
 
-- Download the zip arhive of plugin from [releases tab]
+- Download the zip arhive of plugin from [releases tab](https://github.com/madebyaman/copywriter-blocks/releases)
 - In WP Admin Options, click "Plugins", followed by "Add New"
 - Click "Upload Plugin" and upload the plugin.
 
